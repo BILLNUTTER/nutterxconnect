@@ -22,7 +22,8 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 const queryClient = new QueryClient();
 const whatsappUrl = 'https://wa.me/254713881613';
 const phoneHref = 'tel:+254758891491';
-const emailHref = 'mailto:info@nutterx.co.ke';
+const emailAddresses = ['nutterxconnect@gmail.com', 'nutterxtech@gmail.com'];
+const emailHref = `mailto:${emailAddresses.join(',')}`;
 
 const serviceItems = [
   {
@@ -30,6 +31,7 @@ const serviceItems = [
     title: 'Web Development',
     text: 'We build fast, secure and responsive websites tailored to your business needs.',
     cta: 'Get Started',
+    destination: '#contact',
     icon: Code2,
   },
   {
@@ -37,6 +39,7 @@ const serviceItems = [
     title: 'WhatsApp Bot Deployment',
     text: 'Powerful WhatsApp bots with advanced features to automate communication and grow your business.',
     cta: 'Deploy a Bot',
+    destination: '#bot',
     icon: MessageCircle,
   },
   {
@@ -44,6 +47,7 @@ const serviceItems = [
     title: 'WiFi Solutions',
     text: 'Reliable and fast internet solutions for homes, businesses and organizations.',
     cta: 'Get Connected',
+    destination: '#wifi',
     icon: Wifi,
   },
   {
@@ -51,6 +55,7 @@ const serviceItems = [
     title: 'System Solutions',
     text: 'Customized software and system solutions designed to streamline your operations.',
     cta: 'Discuss a Project',
+    destination: '#contact',
     icon: Settings2,
   },
   {
@@ -58,6 +63,7 @@ const serviceItems = [
     title: 'Digital Marketing',
     text: 'Boost your brand visibility and reach more customers with effective digital strategies.',
     cta: 'Grow Your Brand',
+    destination: '#contact',
     icon: Megaphone,
   },
 ];
@@ -145,6 +151,7 @@ function AppContent() {
             <nav className="nav-links" aria-label="Main navigation">
               <a href="#home">Home</a>
               <a href="#services">Services</a>
+              <a href="#bot">WhatsApp Bot</a>
               <a href="#wifi">WiFi</a>
               <a href="#why-us">Why Us</a>
               <a href="#contact">Contact</a>
@@ -170,6 +177,7 @@ function AppContent() {
             <nav className="mobile-nav" aria-label="Mobile navigation">
               <a href="#home" onClick={closeMenu}>Home</a>
               <a href="#services" onClick={closeMenu}>Services</a>
+                <a href="#bot" onClick={closeMenu}>WhatsApp Bot</a>
               <a href="#wifi" onClick={closeMenu}>WiFi</a>
               <a href="#why-us" onClick={closeMenu}>Why Us</a>
               <a href="#contact" onClick={closeMenu}>Contact</a>
@@ -236,13 +244,19 @@ function AppContent() {
                       <h3>{service.title}</h3>
                       <p>{service.text}</p>
                     </div>
-                    <button
-                      className="service-link"
-                      type="button"
-                      onClick={() => openWhatsApp(`Hello NutterX Technologies, I am interested in ${service.title}. I would like to know more.`)}
-                    >
-                      {service.cta} <ChevronRight size={15} />
-                    </button>
+                    {service.number === '02' ? (
+                      <button
+                        className="service-link"
+                        type="button"
+                        onClick={() => openWhatsApp(`Hello NutterX Technologies, I am interested in ${service.title}. I would like to know more.`)}
+                      >
+                        {service.cta} <ChevronRight size={15} />
+                      </button>
+                    ) : (
+                      <a className="service-link" href={service.destination}>
+                        {service.cta} <ChevronRight size={15} />
+                      </a>
+                    )}
                   </Reveal>
                 );
               })}
@@ -250,7 +264,7 @@ function AppContent() {
           </div>
         </section>
 
-        <section className="bot-section">
+         <section className="bot-section" id="bot">
           <div className="container">
             <Reveal className="bot-card">
               <div className="bot-content">
@@ -443,7 +457,11 @@ function AppContent() {
               <Reveal className="contact-actions" delay={120}>
                  <button className="contact-item contact-cta" type="button" onClick={() => openWhatsApp('Hello NutterX Technologies, I would like to enquire about your services.')}><MessageCircle size={19} /> CHAT ON WHATSAPP <span className="contact-detail">+254 713 881 613</span> <ArrowUpRight size={15} /></button>
                  <a className="contact-item contact-cta" href={phoneHref}><Phone size={19} /> CALL US <span className="contact-detail">0758 891 491</span> <ArrowUpRight size={15} /></a>
-                <a className="contact-item" href={emailHref}><Mail size={19} /> info@nutterx.co.ke <ArrowUpRight size={15} /></a>
+                 <a className="contact-item contact-email" href={emailHref}>
+                   <Mail size={19} />
+                   <span><strong>EMAIL</strong><br />{emailAddresses[0]}<br />{emailAddresses[1]}</span>
+                   <ArrowUpRight size={15} />
+                 </a>
                  <span className="contact-item"><span className="contact-location">KENYA</span></span>
               </Reveal>
             </div>
@@ -451,7 +469,8 @@ function AppContent() {
               <Brand />
                <div className="footer-details">
                  <span>CONNECTING YOU TO A BETTER FUTURE</span>
-                 <span>Services · WhatsApp · Phone · Email · Kenya</span>
+                  <span>Services · WhatsApp · Phone · Kenya</span>
+                  <span>{emailAddresses[0]} · {emailAddresses[1]}</span>
                  <span>© 2026 NutterX Technologies. All rights reserved.</span>
                  <span>NutterX Connect WiFi is a product of NutterX Technologies.</span>
                </div>
