@@ -116,7 +116,9 @@ function Reveal({
 function Brand() {
   return (
     <a className="brand" href="#home" aria-label="NutterX Technologies home">
-      <span className="brand-mark" aria-hidden="true"><span /></span>
+      <span className="brand-logo-crop" aria-hidden="true">
+        <img src="/nutterx-logo.png" alt="" />
+      </span>
       <span>NutterX Technologies</span>
     </a>
   );
