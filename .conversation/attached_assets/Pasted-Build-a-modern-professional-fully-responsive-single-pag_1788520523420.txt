@@ -1,0 +1,600 @@
+Build a modern, professional, fully responsive single-page website for my technology business:
+
+NUTTERX TECHNOLOGIES
+Tagline: “CONNECTING YOU TO A BETTER FUTURE”
+
+The website should be a simple service/business website. NO LOGIN, NO SIGN-UP, NO USER AUTHENTICATION, NO DASHBOARD, NO DATABASE.
+
+The main goal is to clearly show what we offer and allow visitors to contact us directly through WhatsApp or phone call.
+
+==================================================
+BRAND & DESIGN
+==================================================
+
+Business name:
+NUTTERX TECHNOLOGIES
+
+Brand style:
+- Modern
+- Professional
+- Technology-focused
+- Clean
+- Premium
+- Bold
+- Mobile-first
+- Kenyan technology business
+
+Primary brand colors:
+- Orange
+- Black
+- White
+
+Use orange as the main accent color, with black/dark sections and white backgrounds.
+
+The design should take inspiration from the uploaded NutterX Technologies branding images:
+- Strong NUTTERX branding
+- Orange/black/white technology aesthetic
+- Bold typography
+- Rounded cards
+- Subtle gradients
+- Modern icons
+- Professional spacing
+- Smooth animations
+- Clean responsive layout
+
+Do NOT copy the posters literally. Use them as brand/style references and create a proper modern website.
+
+If the uploaded NutterX Technologies logo is available to the project, use the actual logo rather than recreating it.
+
+==================================================
+HEADER / NAVIGATION
+==================================================
+
+Create a sticky responsive navigation bar.
+
+Logo:
+NUTTERX TECHNOLOGIES
+
+Navigation:
+- Home
+- Services
+- WiFi
+- Why Us
+- Contact
+
+On mobile, use a clean hamburger menu.
+
+Add a prominent CTA button:
+“Contact Us”
+
+The Contact Us button should open WhatsApp.
+
+==================================================
+HERO SECTION
+==================================================
+
+Create a strong hero section.
+
+Headline:
+
+“TECHNOLOGY THAT CONNECTS YOU TO A BETTER FUTURE.”
+
+Supporting text:
+
+“NutterX Technologies provides reliable digital, connectivity and technology solutions designed for individuals, homes, businesses and organizations.”
+
+Primary CTA:
+“WhatsApp Us”
+
+Secondary CTA:
+“Call Us”
+
+WhatsApp:
++254 713 881 613
+
+Phone:
+0758 891 491
+
+Use appropriate icons.
+
+Add a modern technology-themed visual on the right side on desktop and stack it nicely on mobile.
+
+Include subtle animated elements such as glowing orange accents, floating technology shapes or network lines, but keep the site professional and fast.
+
+==================================================
+SERVICES SECTION
+==================================================
+
+Heading:
+
+“OUR SERVICES”
+
+Subtitle:
+
+“Smart technology solutions built around your needs.”
+
+Create five attractive service cards.
+
+--------------------------------------------------
+1. WEB DEVELOPMENT
+--------------------------------------------------
+
+Icon: Globe / Code
+
+Title:
+Web Development
+
+Description:
+“We build fast, secure and responsive websites tailored to your business needs.”
+
+Include a CTA:
+“Get Started”
+
+--------------------------------------------------
+2. WHATSAPP BOT DEPLOYMENT
+--------------------------------------------------
+
+Icon: WhatsApp / Bot / Message
+
+Title:
+WhatsApp Bot Deployment
+
+Price:
+“KSH 70 / MONTH”
+
+Description:
+“Powerful WhatsApp bots with advanced features to automate communication and grow your business.”
+
+Highlight this service because it is one of our key offers.
+
+Add CTA:
+“Deploy a Bot”
+
+The CTA should open WhatsApp with a pre-filled message asking about WhatsApp bot deployment.
+
+IMPORTANT:
+The price is KSH 70 per month.
+
+Do NOT write KSH 70 one-time.
+Do NOT write KSH 70 per deployment.
+It is KSH 70 PER MONTH.
+
+--------------------------------------------------
+3. WIFI SOLUTIONS
+--------------------------------------------------
+
+Icon: WiFi
+
+Title:
+WiFi Solutions
+
+Description:
+“Reliable and fast internet solutions for homes, businesses and organizations.”
+
+Mention that we provide connectivity solutions and affordable WiFi packages.
+
+CTA:
+“Get Connected”
+
+--------------------------------------------------
+4. SYSTEM SOLUTIONS
+--------------------------------------------------
+
+Icon: Monitor / Settings / Software
+
+Title:
+System Solutions
+
+Description:
+“Customized software and system solutions designed to streamline your operations.”
+
+CTA:
+“Discuss a Project”
+
+--------------------------------------------------
+5. DIGITAL MARKETING
+--------------------------------------------------
+
+Icon: Megaphone / Marketing
+
+Title:
+Digital Marketing
+
+Description:
+“Boost your brand visibility and reach more customers with effective digital strategies.”
+
+CTA:
+“Grow Your Brand”
+
+==================================================
+WHATSAPP BOT FEATURE SECTION
+==================================================
+
+Create a visually strong dedicated section for the WhatsApp Bot service.
+
+Headline:
+
+“POWERFUL WHATSAPP BOTS. JUST KSH 70/MONTH.”
+
+Subheading:
+
+“AUTOMATE. ENGAGE. GROW.”
+
+Description:
+
+“Get your WhatsApp Bot up and running and take your communication and business automation to the next level.”
+
+Show:
+KSH 70 / MONTH
+
+Add a large:
+“Deploy Now”
+
+button that opens WhatsApp.
+
+Use a WhatsApp-inspired visual while still maintaining the NutterX orange/black/white branding.
+
+Make it clear that this is a monthly service.
+
+==================================================
+WIFI / NUTTERX CONNECT SECTION
+==================================================
+
+NutterX Technologies also offers WiFi connectivity through:
+
+“NUTTERX CONNECT WIFI”
+
+Create a dedicated section explaining the WiFi service.
+
+Headline:
+
+“FAST. SECURE. STABLE. AFFORDABLE.”
+
+Description:
+
+“Stay connected with reliable internet solutions for homes, families and businesses.”
+
+Show the available packages from the supplied branding material:
+
+HOTSPOT PACKAGES:
+
+FREE — 3 MINUTES — KSH 0
+
+1 HR — KSH 10
+
+3 HRS — KSH 20
+
+6 HRS — KSH 30
+
+12 HRS — KSH 40
+
+24 HRS — KSH 50
+
+1 WEEK — KSH 250
+
+1 MONTH — KSH 600
+
+FAMILY PACKAGES:
+
+4 Mbps — KSH 800 / MONTH
+
+7 Mbps — KSH 1000 / MONTH
+
+Add small feature highlights:
+
+- Fast Internet
+- Secure Connection
+- Stable Network
+- Affordable Prices
+
+Important:
+Present these as WiFi packages offered through NutterX Connect WiFi.
+
+==================================================
+WHY CHOOSE US
+==================================================
+
+Create a dark premium section with orange accents.
+
+Heading:
+
+“WHY CHOOSE NUTTERX?”
+
+Five feature cards:
+
+1. QUALITY SERVICE
+“Professional solutions built with quality in mind.”
+
+2. RELIABLE & SECURE
+“Reliable technology and connectivity solutions.”
+
+3. SUPPORT
+“Friendly support when you need assistance.”
+
+4. INNOVATIVE SOLUTIONS
+“Modern solutions designed to solve real problems.”
+
+5. CLIENT SATISFACTION
+“We focus on delivering solutions that meet our clients’ needs.”
+
+==================================================
+ABOUT SECTION
+==================================================
+
+Heading:
+
+“ABOUT NUTTERX TECHNOLOGIES”
+
+Text:
+
+“NutterX Technologies is a Kenya-based technology brand providing digital, connectivity and technology solutions. From websites and WhatsApp automation to WiFi and customized systems, we help individuals, businesses and organizations use technology more effectively.”
+
+Keep the section concise and professional.
+
+Add a small badge:
+“BASED IN KENYA 🇰🇪”
+
+==================================================
+CONTACT SECTION
+==================================================
+
+Create a strong contact section.
+
+Heading:
+
+“LET'S BUILD SOMETHING BETTER.”
+
+Text:
+
+“Have a project, need reliable WiFi, or want to automate your business with a WhatsApp bot? Talk to us today.”
+
+Contact options:
+
+WHATSAPP:
++254 713 881 613
+
+PHONE:
+0758 891 491
+
+EMAIL:
+info@nutterx.co.ke
+
+Location:
+Kenya 🇰🇪
+
+Create two large CTA buttons:
+
+“CHAT ON WHATSAPP”
+“CALL US”
+
+WhatsApp button should open:
+
+https://wa.me/254713881613
+
+Phone button should use:
+tel:+254758891491
+
+For WhatsApp service buttons, use appropriate pre-filled messages, for example:
+
+“Hello NutterX Technologies, I’m interested in your WhatsApp Bot Deployment at KSH 70/month. I’d like to know more.”
+
+For general contact:
+“Hello NutterX Technologies, I’d like to enquire about your services.”
+
+==================================================
+FOOTER
+==================================================
+
+Create a professional footer.
+
+Logo/name:
+NUTTERX TECHNOLOGIES
+
+Tagline:
+“CONNECTING YOU TO A BETTER FUTURE”
+
+Include:
+- Services
+- WhatsApp
+- Phone
+- Email
+- Kenya
+
+Footer text:
+
+“© 2026 NutterX Technologies. All rights reserved.”
+
+Also mention:
+
+“NutterX Connect WiFi is a product of NutterX Technologies.”
+
+==================================================
+FUNCTIONAL REQUIREMENTS
+==================================================
+
+The website must actually work.
+
+WhatsApp buttons must open WhatsApp correctly.
+
+Phone buttons must trigger the phone dialer on mobile.
+
+Email should open the user's email client.
+
+Navigation links should smoothly scroll to their sections.
+
+Add smooth scrolling.
+
+Add subtle hover animations.
+
+Add scroll reveal animations, but keep them lightweight.
+
+Buttons should have clear hover and active states.
+
+Make sure all buttons work on both desktop and mobile.
+
+==================================================
+RESPONSIVENESS
+==================================================
+
+The website must look excellent on:
+
+- Android phones
+- iPhones
+- Tablets
+- Laptops
+- Desktop monitors
+
+Mobile experience is extremely important.
+
+Cards should stack properly on small screens.
+
+Navigation should become a hamburger menu.
+
+Avoid horizontal scrolling.
+
+Images must be responsive.
+
+Text must remain readable on small screens.
+
+==================================================
+SEO
+==================================================
+
+Add proper:
+
+Title:
+“NutterX Technologies | Technology & WiFi Solutions in Kenya”
+
+Meta description:
+“NutterX Technologies provides web development, WhatsApp bot deployment, WiFi solutions, system solutions and digital marketing services in Kenya.”
+
+Use semantic HTML.
+
+Add appropriate heading hierarchy.
+
+Add Open Graph metadata.
+
+==================================================
+TECHNICAL REQUIREMENTS
+==================================================
+
+Use a modern frontend stack suitable for Replit.
+
+Prefer:
+- React
+- Vite
+- Tailwind CSS
+
+Use Lucide React or another clean icon library.
+
+Do not overcomplicate the project.
+
+No authentication.
+
+No database.
+
+No unnecessary backend.
+
+Keep the code clean and component-based.
+
+Create reusable components for:
+- Navbar
+- Hero
+- Services
+- Bot Pricing
+- WiFi Packages
+- Why Choose Us
+- About
+- Contact
+- Footer
+
+Use CSS animations/transitions rather than heavy animation libraries unless necessary.
+
+Optimize for fast loading.
+
+==================================================
+IMPORTANT CONTENT RULES
+==================================================
+
+Do not invent additional services.
+
+The main services are:
+
+1. Web Development
+2. WhatsApp Bot Deployment — KSH 70/month
+3. WiFi Solutions
+4. System Solutions
+5. Digital Marketing
+
+The WhatsApp bot price MUST always be displayed as:
+
+KSH 70 / MONTH
+
+Do not change the price.
+
+Do not add login/signup.
+
+Do not add fake customer reviews.
+
+Do not add fake statistics such as “500+ clients”.
+
+Do not add fake testimonials.
+
+Do not invent an office address.
+
+Do not invent social media accounts.
+
+Keep the website trustworthy and professional.
+
+==================================================
+FINAL DESIGN DIRECTION
+==================================================
+
+The final website should feel like a real technology company website, not a school project.
+
+Think:
+
+NUTTERX TECHNOLOGIES
++
+Modern Kenyan tech company
++
+Orange / Black / White
++
+Premium technology aesthetic
++
+Strong typography
++
+Clean cards
++
+Professional animations
++
+Direct WhatsApp conversion
+
+The most important conversion goal is:
+
+VISITOR → UNDERSTANDS OUR SERVICES → CLICKS WHATSAPP → CONTACTS NUTTERX
+
+Make the website polished, visually impressive, fast and easy to navigate.......... .. Now review the entire website as a professional UI/UX designer.
+
+Fix anything that makes it look like a generic AI-generated template.
+
+Make the NutterX Technologies branding much stronger using the orange, black and white identity.
+
+Improve:
+- typography
+- spacing
+- mobile responsiveness
+- service card design
+- hero section
+- WhatsApp CTA prominence
+- animations
+- visual hierarchy
+- navigation
+- WiFi package presentation
+- overall premium technology feel
+
+Do not add fake information or new services.
+
+Keep all existing prices and contact numbers exactly as provided.
+
+Make the final result feel like a polished commercial website that a real Kenyan technology company could launch publicly.

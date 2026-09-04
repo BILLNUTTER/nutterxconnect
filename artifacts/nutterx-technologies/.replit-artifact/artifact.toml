@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "NutterX Technologies"
+description = "A premium single-page website for NutterX Technologies, a Kenya-based technology company offering web development, WhatsApp automation, WiFi connectivity, system solutions, and digital marketing services."
+version = "1.0.0"
+id = "artifacts/nutterx-technologies"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22057
+
+[services.development]
+run = "pnpm --filter @workspace/nutterx-technologies run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/nutterx-technologies", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/nutterx-technologies/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22057"
+BASE_PATH = "/"
