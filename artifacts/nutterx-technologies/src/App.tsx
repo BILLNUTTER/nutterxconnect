@@ -8,7 +8,6 @@ import {
   Code2,
   Mail,
   Menu,
-  Megaphone,
   MessageCircle,
   Phone,
   Settings2,
@@ -57,14 +56,6 @@ const serviceItems = [
     cta: 'Discuss a Project',
     destination: '#contact',
     icon: Settings2,
-  },
-  {
-    number: '05',
-    title: 'Digital Marketing',
-    text: 'Boost your brand visibility and reach more customers with effective digital strategies.',
-    cta: 'Grow Your Brand',
-    destination: '#contact',
-    icon: Megaphone,
   },
 ];
 
@@ -142,8 +133,6 @@ function AppContent() {
 
   return (
     <div className="site-shell">
-      <div className="topline">NutterX Technologies · CONNECTING YOU TO A BETTER FUTURE</div>
-
       <header className={`site-header ${menuOpen ? 'menu-open' : ''}`}>
         <div className="container">
           <div className="nav-wrap">
@@ -218,7 +207,7 @@ function AppContent() {
             </Reveal>
 
             <Reveal className="hero-footer" delay={180}>
-              <span className="hero-note">Web. WhatsApp. WiFi. Systems. Digital marketing.</span>
+              <span className="hero-note">Web. WhatsApp. WiFi. Systems.</span>
               <a className="hero-scroll" href="#services">Scroll to explore <ArrowDown size={15} /></a>
             </Reveal>
           </div>
@@ -239,7 +228,7 @@ function AppContent() {
                 return (
                   <Reveal key={service.number} className="service-card" delay={index * 90}>
                     <div>
-                      <span className="service-number">{service.number} / 05</span>
+                      <span className="service-number">{service.number} / {String(serviceItems.length).padStart(2, '0')}</span>
                       <div className="service-icon"><Icon size={22} strokeWidth={1.7} /></div>
                       <h3>{service.title}</h3>
                       <p>{service.text}</p>
