@@ -30,6 +30,7 @@ const serviceItems = [
     title: 'Web Development',
     text: 'We build fast, secure and responsive websites tailored to your business needs.',
     cta: 'Get Started',
+    audience: 'Digital presence',
     destination: '#contact',
     icon: Code2,
   },
@@ -38,6 +39,7 @@ const serviceItems = [
     title: 'WhatsApp Bot Deployment',
     text: 'Powerful WhatsApp bots with advanced features to automate communication and grow your business.',
     cta: 'Deploy a Bot',
+    audience: 'Business automation',
     destination: '#bot',
     icon: MessageCircle,
   },
@@ -46,6 +48,7 @@ const serviceItems = [
     title: 'WiFi Solutions',
     text: 'Reliable and fast internet solutions for homes, businesses and organizations.',
     cta: 'Get Connected',
+    audience: 'Home + business',
     destination: '#wifi',
     icon: Wifi,
   },
@@ -54,6 +57,7 @@ const serviceItems = [
     title: 'System Solutions',
     text: 'Customized software and system solutions designed to streamline your operations.',
     cta: 'Discuss a Project',
+    audience: 'Practical systems',
     destination: '#contact',
     icon: Settings2,
   },
@@ -80,10 +84,12 @@ function Reveal({
   children,
   className = '',
   delay = 0,
+  ariaHidden = false,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  ariaHidden?: boolean;
 }) {
   const [visible, setVisible] = useState(false);
 
@@ -91,6 +97,7 @@ function Reveal({
     <div
       className={`reveal ${visible ? 'is-visible' : ''} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
+      aria-hidden={ariaHidden}
       ref={(node) => {
         if (!node || visible) return;
         const observer = new IntersectionObserver(
@@ -206,6 +213,26 @@ function AppContent() {
               </div>
             </Reveal>
 
+             <Reveal className="hero-signal" delay={110} ariaHidden>
+               <div className="signal-topline">
+                 <span>NUTTERX / CONNECTED</span>
+                 <span className="signal-live"><i /> LIVE</span>
+               </div>
+               <div className="signal-core">
+                 <span className="signal-ring ring-one" />
+                 <span className="signal-ring ring-two" />
+                 <span className="signal-node node-top">WEB</span>
+                 <span className="signal-node node-right">BOT</span>
+                 <span className="signal-node node-bottom">WIFI</span>
+                 <span className="signal-node node-left">SYSTEMS</span>
+                 <span className="signal-center">NX</span>
+               </div>
+               <div className="signal-foot">
+                 <span>FOUR WAYS TO MOVE FORWARD</span>
+                 <span>01 — 04</span>
+               </div>
+             </Reveal>
+
             <Reveal className="hero-footer" delay={180}>
               <span className="hero-note">Web. WhatsApp. WiFi. Systems.</span>
               <a className="hero-scroll" href="#services">Scroll to explore <ArrowDown size={15} /></a>
@@ -232,6 +259,7 @@ function AppContent() {
                       <div className="service-icon"><Icon size={22} strokeWidth={1.7} /></div>
                       <h3>{service.title}</h3>
                       <p>{service.text}</p>
+                       <span className="service-audience">{service.audience}</span>
                     </div>
                     {service.number === '02' ? (
                       <button
