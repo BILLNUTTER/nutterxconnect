@@ -388,9 +388,12 @@ function AppContent() {
 
         <section className="section why-section" id="why-us">
           <div className="container why-grid">
-            <Reveal className="why-art" aria-label="NutterX graphic artwork">
-              <span className="art-word">NX</span>
-              <span className="art-corner">built for here</span>
+             <Reveal className="why-art">
+               <img
+                 className="why-logo"
+                 src="/nutterx-why-choose.png"
+                 alt="NutterX Technologies logo"
+               />
             </Reveal>
             <Reveal className="why-copy" delay={110}>
               <span className="eyebrow">Why NutterX</span>

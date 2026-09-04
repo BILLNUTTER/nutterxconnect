@@ -939,64 +939,29 @@ button {
 
 .why-art {
   position: relative;
+  display: grid;
   min-height: 475px;
+  padding: 18px;
+  place-items: center;
   border-radius: 30px;
-  background: #f36a21;
+  background: #fff;
   overflow: hidden;
 }
 
-.why-art::before,
-.why-art::after {
-  position: absolute;
-  border: 1px solid rgba(31, 29, 27, .36);
-  border-radius: 50%;
-  content: '';
-}
-
-.why-art::before {
-  width: 350px;
-  height: 350px;
-  top: 64px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.why-art::after {
-  width: 490px;
-  height: 490px;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.art-word {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.why-logo {
+  position: relative;
   z-index: 1;
-  width: max-content;
-  color: #201e1b;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(4.2rem, 9vw, 8.5rem);
-  font-weight: 700;
-  letter-spacing: -.12em;
-  transform: translate(-50%, -50%) rotate(-8deg);
+  display: block;
+  width: min(100%, 430px);
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgba(10, 31, 41, .12);
+  transition: transform .35s ease, box-shadow .35s ease;
 }
 
-.art-corner {
-  position: absolute;
-  z-index: 2;
-  right: 23px;
-  bottom: 21px;
-  padding: 8px 11px;
-  border: 1px solid rgba(31, 29, 27, .35);
-  border-radius: 99px;
-  color: #201e1b;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .11em;
-  text-transform: uppercase;
+.why-art:hover .why-logo {
+  box-shadow: 0 24px 50px rgba(10, 31, 41, .2);
+  transform: translateY(-5px) scale(1.015);
 }
 
 .why-copy .section-heading {
@@ -1508,22 +1473,6 @@ button {
     border-radius: 23px;
   }
 
-  .why-art::before {
-    width: 235px;
-    height: 235px;
-    top: 25px;
-  }
-
-  .why-art::after {
-    width: 330px;
-    height: 330px;
-    top: -23px;
-  }
-
-  .art-word {
-    font-size: 4.7rem;
-  }
-
   .process-bar {
     display: flex;
     flex-direction: column;
@@ -2007,10 +1956,8 @@ a:focus-visible {
 }
 
 .why-art {
-  background:
-    linear-gradient(135deg, rgba(11, 32, 41, .16) 25%, transparent 25%) 0 0 / 18px 18px,
-    var(--aqua);
-  box-shadow: 17px 17px 0 rgba(239, 104, 63, .84);
+  background: #fff;
+  box-shadow: 17px 17px 0 rgba(239, 104, 63, .46);
 }
 
 .why-list {
@@ -2142,7 +2089,7 @@ a:focus-visible {
   }
 
   .why-art {
-    box-shadow: 10px 10px 0 rgba(239, 104, 63, .84);
+    box-shadow: 10px 10px 0 rgba(239, 104, 63, .46);
   }
 }
 
