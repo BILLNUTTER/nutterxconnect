@@ -1907,6 +1907,53 @@ a:focus-visible {
   color: rgba(152, 213, 198, .72);
 }
 
+.service-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card,
+.service-card:nth-child(1),
+.service-card:nth-child(2),
+.service-card:nth-child(3),
+.service-card:nth-child(4) {
+  min-height: 360px;
+  grid-column: span 1;
+  padding: 32px;
+}
+
+.service-number {
+  font-size: 13px;
+}
+
+.service-icon {
+  width: 58px;
+  height: 58px;
+  margin-top: 30px;
+  border-radius: 17px;
+}
+
+.service-card h3 {
+  margin: 24px 0 10px;
+  font-size: clamp(1.5rem, 2.1vw, 1.9rem);
+}
+
+.service-card p {
+  max-width: 430px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.service-link {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.service-audience {
+  margin-top: 16px;
+  font-size: 10px;
+}
+
 .bot-card {
   border-radius: 27px;
   background:
@@ -2082,6 +2129,28 @@ a:focus-visible {
   .service-card:nth-child(4),
   .service-card:nth-child(5) {
     grid-column: auto;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .service-card,
+  .service-card:nth-child(1),
+  .service-card:nth-child(2),
+  .service-card:nth-child(3),
+  .service-card:nth-child(4) {
+    min-height: 310px;
+    padding: 26px;
+  }
+
+  .service-card h3 {
+    font-size: 1.55rem;
+  }
+
+  .service-card p {
+    font-size: 15px;
   }
 
   .services {
