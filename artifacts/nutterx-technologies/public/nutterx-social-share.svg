@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071b24"/>
+      <stop offset="0.58" stop-color="#0b3039"/>
+      <stop offset="1" stop-color="#104b50"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="48%" r="52%">
+      <stop offset="0" stop-color="#86d2c0" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#86d2c0" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#b4e1d2" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1010" cy="315" r="252" fill="none" stroke="#9ad9c9" stroke-opacity="0.2" stroke-width="2"/>
+  <circle cx="1010" cy="315" r="205" fill="none" stroke="#9ad9c9" stroke-opacity="0.13" stroke-width="1"/>
+  <rect x="62" y="56" width="8" height="8" rx="4" fill="#f36a21"/>
+  <text x="84" y="65" fill="#f36a21" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">NUTTERX TECHNOLOGIES</text>
+  <text x="62" y="175" fill="#fffaf5" font-family="DejaVu Sans, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-2">TECHNOLOGY</text>
+  <text x="62" y="248" fill="#fffaf5" font-family="DejaVu Sans, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-2">THAT CONNECTS</text>
+  <text x="62" y="305" fill="#9ad9c9" font-family="DejaVu Sans, Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="-2">YOU TO A BETTER</text>
+  <text x="62" y="370" fill="#9ad9c9" font-family="DejaVu Sans, Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="-2">FUTURE.</text>
+  <text x="64" y="430" fill="#d5e4e5" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400">Reliable digital, connectivity and technology solutions in Kenya.</text>
+  <rect x="64" y="478" width="535" height="1" fill="#9ad9c9" fill-opacity="0.35"/>
+  <text x="64" y="522" fill="#f36a21" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2">WEB  ·  WHATSAPP BOTS  ·  WIFI  ·  SYSTEMS</text>
+  <text x="64" y="585" fill="#9ad9c9" fill-opacity="0.75" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2">BUILT FOR PEOPLE. READY FOR WHAT'S NEXT.</text>
+  <rect x="720" y="104" width="450" height="422" rx="30" fill="#fffaf5" fill-opacity="0.97"/>
+  <rect x="720" y="104" width="450" height="422" rx="30" fill="none" stroke="#f36a21" stroke-opacity="0.65" stroke-width="3"/>
+</svg>
