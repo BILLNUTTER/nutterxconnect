@@ -8,7 +8,9 @@ import runtimeErrorOverlay from '@replit/vite-plugin-runtime-error-modal';
 
 const rawPort = process.env.PORT ?? '5173';
 const port = Number(rawPort);
-const siteUrl = (process.env.VITE_SITE_URL ?? '').replace(/\/+$/, '');
+const siteUrl = (
+  process.env.VITE_SITE_URL ?? 'https://nutterx-connect.vercel.app'
+).replace(/\/+$/, '');
 
 if (Number.isNaN(port) || port <= 0) {
   throw new Error(`Invalid PORT value: "${rawPort}"`);
