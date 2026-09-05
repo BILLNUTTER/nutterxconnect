@@ -1,4 +1,5 @@
 import path from 'path';
+import { readFileSync, writeFileSync } from 'node:fs';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
@@ -22,6 +23,18 @@ export default defineConfig({
       name: 'nutterx-social-meta',
       transformIndexHtml(html) {
         return html.replaceAll('__SITE_URL__', siteUrl);
+      },
+      closeBundle() {
+        const publicDir = path.resolve(import.meta.dirname, 'public');
+        const outputDir = path.resolve(import.meta.dirname, 'dist/public');
+
+        for (const fileName of ['robots.txt', 'sitemap.xml']) {
+          const source = readFileSync(path.join(publicDir, fileName), 'utf8');
+          writeFileSync(
+            path.join(outputDir, fileName),
+            source.replaceAll('__SITE_URL__', siteUrl),
+          );
+        }
       },
     },
     react(),
