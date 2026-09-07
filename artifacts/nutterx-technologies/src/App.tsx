@@ -527,14 +527,16 @@ function AppContent() {
               </Reveal>
             </div>
             <footer className="footer">
-              <Brand />
-               <div className="footer-details">
-                 <span>CONNECTING YOU TO A BETTER FUTURE</span>
-                  <span>Services · WhatsApp · Phone · Kenya</span>
-                  <span>{emailAddresses[0]} · {emailAddresses[1]}</span>
-                 <span>© 2026 NutterX Technologies. All rights reserved.</span>
-                 <span>NutterX Connect WiFi is a product of NutterX Technologies.</span>
-               </div>
+              <div className="footer-brand">
+                <Brand />
+                <span className="footer-tagline">Connecting you to a better future</span>
+              </div>
+              <div className="footer-details">
+                <span className="footer-detail-label">SERVICES · WHATSAPP · PHONE · KENYA</span>
+                <span>{emailAddresses[0]} · {emailAddresses[1]}</span>
+                <span>© 2026 NutterX Technologies. All rights reserved.</span>
+                <span>NutterX Connect WiFi is a product of NutterX Technologies.</span>
+              </div>
             </footer>
           </div>
         </section>
