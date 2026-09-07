@@ -14,6 +14,8 @@ import {
   Wifi,
   X,
 } from 'lucide-react';
+import { FaFacebookF, FaInstagram, FaTiktok, FaXTwitter } from 'react-icons/fa6';
+import type { IconType } from 'react-icons';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -23,6 +25,28 @@ const whatsappUrl = 'https://wa.me/254713881613';
 const phoneHref = 'tel:+254758891491';
 const emailAddresses = ['nutterxconnect@gmail.com', 'nutterxtech@gmail.com'];
 const emailHref = `mailto:${emailAddresses.join(',')}`;
+const socialLinks: { label: string; href: string; icon: IconType }[] = [
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/nutterx_?stkn=MTkwcWNya2Y0bTgzcw==',
+    icon: FaInstagram,
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/profile.php?id=61589267831004',
+    icon: FaFacebookF,
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@nutter.001?_r=1&_t=ZS-99XBnc6KSBw',
+    icon: FaTiktok,
+  },
+  {
+    label: 'X',
+    href: 'https://x.com/Billnutter43778',
+    icon: FaXTwitter,
+  },
+];
 
 const serviceItems = [
   {
@@ -473,6 +497,23 @@ function AppContent() {
                 <span className="eyebrow">Let&apos;s connect</span>
                  <h2>LET&apos;S BUILD SOMETHING BETTER.</h2>
                  <p className="contact-intro">Have a project, need reliable WiFi, or want to automate your business with a WhatsApp bot? Talk to us today.</p>
+                 <div className="social-links" aria-label="NutterX Technologies social media profiles">
+                   <span className="social-links-label">Follow NutterX</span>
+                   <div className="social-links-list">
+                     {socialLinks.map(({ label, href, icon: Icon }) => (
+                       <a
+                         className="social-link"
+                         href={href}
+                         target="_blank"
+                         rel="noreferrer"
+                         aria-label={`NutterX Technologies on ${label}`}
+                         key={label}
+                       >
+                         <Icon aria-hidden="true" />
+                       </a>
+                     ))}
+                   </div>
+                 </div>
               </Reveal>
               <Reveal className="contact-actions" delay={120}>
                  <button className="contact-item contact-cta" type="button" onClick={() => openWhatsApp('Hello NutterX Technologies, I would like to enquire about your services.')}><MessageCircle size={19} /> CHAT ON WHATSAPP <span className="contact-detail">+254 713 881 613</span> <ArrowUpRight size={15} /></button>
