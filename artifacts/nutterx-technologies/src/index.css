@@ -2085,27 +2085,89 @@ a:focus-visible {
 
 .contact-section {
   background:
-    radial-gradient(circle at 86% 11%, rgba(152, 213, 198, .2), transparent 19%),
-    linear-gradient(120deg, var(--coral-dark), #b9462f 62%, #8e3e32);
+    linear-gradient(rgba(152, 213, 198, .035) 1px, transparent 1px),
+    radial-gradient(circle at 88% 8%, rgba(152, 213, 198, .12), transparent 27%),
+    linear-gradient(135deg, #071b24 0%, #0b2a34 58%, #123f46 100%);
+  background-size: 100% 56px, auto, auto;
+}
+
+.contact-section::before {
+  top: 11%;
+  right: 5%;
+  width: 360px;
+  height: 360px;
+  border-color: rgba(152, 213, 198, .16);
 }
 
 .contact-section .eyebrow {
-  color: var(--ink);
+  color: var(--coral);
+}
+
+.contact-section h2 {
+  max-width: 680px;
+  font-size: clamp(3.2rem, 6.6vw, 6.4rem);
+}
+
+.contact-section .contact-intro {
+  color: rgba(234, 242, 248, .68);
+}
+
+.contact-actions {
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid rgba(152, 213, 198, .2);
+  border-radius: 26px;
+  background: rgba(7, 27, 36, .58);
+  box-shadow: 0 20px 45px rgba(3, 16, 22, .2);
+  backdrop-filter: blur(12px);
+}
+
+.contact-actions-label {
+  margin-bottom: 7px;
+  color: var(--aqua);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
 }
 
 .contact-item {
-  border-bottom-color: rgba(255, 246, 231, .3);
+  border-bottom-color: rgba(174, 225, 210, .18);
+}
+
+.contact-item svg {
+  color: var(--aqua);
 }
 
 .contact-cta {
-  border-color: rgba(255, 246, 231, .3);
-  background: rgba(11, 32, 41, .12);
+  border-color: rgba(174, 225, 210, .22);
+  background: rgba(152, 213, 198, .06);
   transition: transform .25s ease, opacity .25s ease;
 }
 
 .contact-cta:hover {
-  border-color: rgba(255, 246, 231, .65);
-  background: rgba(11, 32, 41, .23);
+  border-color: rgba(152, 213, 198, .58);
+  background: rgba(152, 213, 198, .12);
+}
+
+.contact-email {
+  align-items: flex-start;
+}
+
+.contact-email span {
+  color: rgba(234, 242, 248, .68);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.contact-email strong {
+  color: #f0a080;
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.contact-actions .contact-location {
+  color: rgba(234, 242, 248, .72);
 }
 
 .footer {
@@ -2113,6 +2175,15 @@ a:focus-visible {
 }
 
 @media (max-width: 850px) {
+  .contact-section h2 {
+    font-size: clamp(3.4rem, 12vw, 5rem);
+  }
+
+  .contact-actions {
+    padding: 21px;
+    border-radius: 21px;
+  }
+
   .site-header {
     top: 0;
   }
