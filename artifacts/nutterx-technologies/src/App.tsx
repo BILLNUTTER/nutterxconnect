@@ -1,5 +1,6 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Link, useLocation } from 'wouter';
 import {
   ArrowDown,
   ArrowUpRight,
@@ -58,7 +59,7 @@ const serviceItems = [
     text: 'We build fast, secure and responsive websites tailored to your business needs.',
     cta: 'Get Started',
     audience: 'Digital presence',
-    destination: '#contact',
+    destination: '/contact',
     icon: Code2,
   },
   {
@@ -67,7 +68,7 @@ const serviceItems = [
     text: 'Powerful WhatsApp bots with advanced features to automate communication and grow your business.',
     cta: 'Deploy a Bot',
     audience: 'Business automation',
-    destination: '#bot',
+    destination: '/whatsapp-bot',
     icon: MessageCircle,
   },
   {
@@ -76,7 +77,7 @@ const serviceItems = [
     text: 'Reliable and fast internet solutions for homes, businesses and organizations.',
     cta: 'Get Connected',
     audience: 'Home + business',
-    destination: '#wifi',
+    destination: '/wifi',
     icon: Wifi,
   },
   {
@@ -85,10 +86,61 @@ const serviceItems = [
     text: 'Customized software and system solutions designed to streamline your operations.',
     cta: 'Discuss a Project',
     audience: 'Practical systems',
-    destination: '#contact',
+    destination: '/contact',
     icon: Settings2,
   },
 ];
+
+const navigationItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Social App', href: '/community-app' },
+  { label: 'WhatsApp Bot', href: '/whatsapp-bot' },
+  { label: 'WiFi', href: '/wifi' },
+  { label: 'About', href: '/about' },
+  { label: 'How It Works', href: '/how-it-works' },
+  { label: 'Why Us', href: '/why-us' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const pageMetadata: Record<string, { title: string; description: string }> = {
+  '/': {
+    title: 'NutterX Technologies | Technology & WiFi Solutions in Kenya',
+    description: 'NutterX Technologies provides web development, WhatsApp bot deployment, WiFi solutions and system solutions for people and businesses in Kenya.',
+  },
+  '/services': {
+    title: 'Technology Services | NutterX Technologies',
+    description: 'Explore NutterX web development, WhatsApp bot deployment, WiFi and custom system solutions in Kenya.',
+  },
+  '/community-app': {
+    title: 'Social App | NutterX Technologies',
+    description: 'Find new friends, advertise products and vibe chat in the NutterX WhatsApp-style community web app.',
+  },
+  '/whatsapp-bot': {
+    title: 'WhatsApp Bot Deployment | NutterX Technologies',
+    description: 'Automate customer communication with WhatsApp bot deployment from NutterX Technologies in Kenya.',
+  },
+  '/wifi': {
+    title: 'WiFi Solutions | NutterX Technologies',
+    description: 'Explore reliable NutterX Connect WiFi packages for homes, families and businesses in Kenya.',
+  },
+  '/about': {
+    title: 'About NutterX Technologies',
+    description: 'Learn about NutterX Technologies, a Kenya-based provider of digital, connectivity and technology solutions.',
+  },
+  '/how-it-works': {
+    title: 'How It Works | NutterX Technologies',
+    description: 'Learn how to start a conversation with NutterX Technologies and find the right solution for your needs.',
+  },
+  '/why-us': {
+    title: 'Why Choose NutterX Technologies',
+    description: 'See why people and businesses choose NutterX for technology and connectivity solutions in Kenya.',
+  },
+  '/contact': {
+    title: 'Contact NutterX Technologies',
+    description: 'Contact NutterX Technologies in Kenya by WhatsApp, phone, email or social media.',
+  },
+};
 
 const packages = {
   hotspot: [
@@ -144,14 +196,14 @@ function Reveal({
   );
 }
 
-function Brand() {
+function Brand({ onClick }: { onClick?: () => void }) {
   return (
-    <a className="brand" href="#home" aria-label="NutterX Technologies home">
+    <Link className="brand" href="/" aria-label="NutterX Technologies home" onClick={onClick}>
       <span className="brand-logo-crop" aria-hidden="true">
         <img src="/nutterx-logo.png" alt="" />
       </span>
       <span>NutterX Technologies</span>
-    </a>
+    </Link>
   );
 }
 
@@ -159,25 +211,52 @@ function AppContent() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [packageType, setPackageType] = useState<'hotspot' | 'family'>('hotspot');
   const [selectedPackage, setSelectedPackage] = useState('FREE 3 MINUTES');
+  const [location] = useLocation();
+  const currentRoute = location.replace(/\/+$/, '') || '/';
 
   const closeMenu = () => setMenuOpen(false);
   const openWhatsApp = (message: string) => {
     window.open(`${whatsappUrl}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
   };
 
+  useEffect(() => {
+    const metadata = pageMetadata[currentRoute] ?? {
+      title: 'Page Not Found | NutterX Technologies',
+      description: 'This NutterX Technologies page could not be found.',
+    };
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.title = metadata.title;
+    document.querySelector<HTMLMetaElement>('meta[name="description"]')?.setAttribute('content', metadata.description);
+    document.querySelector<HTMLMetaElement>('meta[property="og:title"]')?.setAttribute('content', metadata.title);
+    document.querySelector<HTMLMetaElement>('meta[property="og:description"]')?.setAttribute('content', metadata.description);
+    document.querySelector<HTMLMetaElement>('meta[name="twitter:title"]')?.setAttribute('content', metadata.title);
+    document.querySelector<HTMLMetaElement>('meta[name="twitter:description"]')?.setAttribute('content', metadata.description);
+
+    const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (canonical) {
+      const siteOrigin = new URL(canonical.href).origin;
+      canonical.href = `${siteOrigin}${currentRoute === '/' ? '/' : currentRoute}`;
+      document.querySelector<HTMLMetaElement>('meta[property="og:url"]')?.setAttribute('content', canonical.href);
+    }
+  }, [currentRoute]);
+
   return (
     <div className="site-shell">
       <header className={`site-header ${menuOpen ? 'menu-open' : ''}`}>
         <div className="container">
           <div className="nav-wrap">
-            <Brand />
+            <Brand onClick={closeMenu} />
             <nav className="nav-links" aria-label="Main navigation">
-              <a href="#home">Home</a>
-              <a href="#services">Services</a>
-              <a href="#bot">WhatsApp Bot</a>
-              <a href="#wifi">WiFi</a>
-              <a href="#why-us">Why Us</a>
-              <a href="#contact">Contact</a>
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMenu}
+                  aria-current={currentRoute === item.href ? 'page' : undefined}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </nav>
             <button
               className="button button-primary"
@@ -189,21 +268,26 @@ function AppContent() {
             <button
               className="menu-toggle"
               type="button"
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={menuOpen}
+              aria-controls="site-mobile-nav"
               onClick={() => setMenuOpen((open) => !open)}
             >
               {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
           {menuOpen && (
-            <nav className="mobile-nav" aria-label="Mobile navigation">
-              <a href="#home" onClick={closeMenu}>Home</a>
-              <a href="#services" onClick={closeMenu}>Services</a>
-                <a href="#bot" onClick={closeMenu}>WhatsApp Bot</a>
-              <a href="#wifi" onClick={closeMenu}>WiFi</a>
-              <a href="#why-us" onClick={closeMenu}>Why Us</a>
-              <a href="#contact" onClick={closeMenu}>Contact</a>
+            <nav className="mobile-nav" id="site-mobile-nav" aria-label="Mobile navigation">
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMenu}
+                  aria-current={currentRoute === item.href ? 'page' : undefined}
+                >
+                  {item.label}
+                </Link>
+              ))}
               <button
                 className="button button-primary"
                 type="button"
@@ -229,6 +313,7 @@ function AppContent() {
       )}
 
       <main>
+        {currentRoute === '/' && (
         <section className="hero" id="home">
           <div className="container hero-content">
             <Reveal className="hero-copy">
@@ -269,13 +354,15 @@ function AppContent() {
                </div>
              </Reveal>
 
-            <Reveal className="hero-footer" delay={180}>
+             <Reveal className="hero-footer" delay={180}>
               <span className="hero-note">Web. WhatsApp. WiFi. Systems.</span>
-              <a className="hero-scroll" href="#services">Scroll to explore <ArrowDown size={15} /></a>
+               <Link className="hero-scroll" href="/services">Explore our services <ArrowDown size={15} /></Link>
             </Reveal>
           </div>
         </section>
+        )}
 
+        {currentRoute === '/services' && (
         <section className="section services" id="services">
           <div className="container">
             <Reveal className="section-header">
@@ -297,27 +384,19 @@ function AppContent() {
                       <p>{service.text}</p>
                        <span className="service-audience">{service.audience}</span>
                     </div>
-                    {service.number === '02' ? (
-                      <button
-                        className="service-link"
-                        type="button"
-                        onClick={() => openWhatsApp(`Hello NutterX Technologies, I am interested in ${service.title}. I would like to know more.`)}
-                      >
-                        {service.cta} <ChevronRight size={15} />
-                      </button>
-                    ) : (
-                      <a className="service-link" href={service.destination}>
-                        {service.cta} <ChevronRight size={15} />
-                      </a>
-                    )}
+                    <Link className="service-link" href={service.destination}>
+                      {service.cta} <ChevronRight size={15} />
+                    </Link>
                   </Reveal>
                 );
               })}
             </div>
           </div>
         </section>
+        )}
 
-        <section className="new-app-section" aria-labelledby="new-app-title">
+        {currentRoute === '/community-app' && (
+        <section className="new-app-section" id="community-app" aria-labelledby="new-app-title">
           <div className="container">
             <Reveal className="new-app-card">
               <div className="new-app-copy">
@@ -364,7 +443,9 @@ function AppContent() {
             </Reveal>
           </div>
         </section>
+        )}
 
+        {currentRoute === '/whatsapp-bot' && (
          <section className="bot-section" id="bot">
           <div className="container">
             <Reveal className="bot-card">
@@ -394,7 +475,9 @@ function AppContent() {
             </Reveal>
           </div>
         </section>
+        )}
 
+        {currentRoute === '/wifi' && (
         <section className="section wifi-section" id="wifi">
           <div className="container">
             <div className="wifi-layout">
@@ -469,15 +552,23 @@ function AppContent() {
             </div>
           </div>
         </section>
+        )}
 
+        {currentRoute === '/why-us' && (
         <section className="section why-section" id="why-us">
           <div className="container why-grid">
              <Reveal className="why-art">
-               <img
-                 className="why-logo"
-                 src="/nutterx-why-choose.png"
-                 alt="NutterX Technologies logo"
-               />
+               <div className="why-art-frame">
+                 <img
+                   className="why-logo"
+                   src="/nutterx-why-choose.png"
+                   alt="NutterX Technologies logo"
+                 />
+                 <span className="why-contact-pill">
+                   <Phone size={16} aria-hidden="true" />
+                   +254 758 891 491
+                 </span>
+               </div>
             </Reveal>
             <Reveal className="why-copy" delay={110}>
               <span className="eyebrow">Why NutterX</span>
@@ -507,7 +598,9 @@ function AppContent() {
             </Reveal>
           </div>
         </section>
+        )}
 
+        {currentRoute === '/about' && (
          <section className="section about-section" id="about">
            <div className="container about-layout">
              <Reveal>
@@ -520,8 +613,10 @@ function AppContent() {
              </Reveal>
            </div>
          </section>
+        )}
 
-        <section className="section process-section">
+        {currentRoute === '/how-it-works' && (
+        <section className="section process-section" id="how-it-works">
           <div className="container">
             <Reveal className="section-header">
               <div>
@@ -549,7 +644,9 @@ function AppContent() {
             </div>
           </div>
         </section>
+        )}
 
+        {currentRoute === '/contact' && (
         <section className="contact-section" id="contact">
           <div className="container">
             <div className="contact-grid">
@@ -587,21 +684,46 @@ function AppContent() {
                  <span className="contact-item"><span className="contact-location">KENYA</span></span>
               </Reveal>
             </div>
-            <footer className="footer">
-              <div className="footer-brand">
-                <Brand />
-                <span className="footer-tagline">Connecting you to a better future</span>
-              </div>
+          </div>
+        </section>
+        )}
+
+        {!navigationItems.some((item) => item.href === currentRoute) && (
+          <section className="section not-found-section">
+            <div className="container">
+              <Reveal>
+                <span className="eyebrow">404 · PAGE NOT FOUND</span>
+                <h1 className="section-heading">That page isn&apos;t here.</h1>
+                <p className="section-description">Choose a page from the navigation or return to the NutterX home page.</p>
+                <Link className="button button-primary" href="/">Back to Home <ArrowUpRight size={16} /></Link>
+              </Reveal>
+            </div>
+          </section>
+        )}
+      </main>
+      <div className="site-footer-shell">
+        <div className="container">
+          <footer className="footer">
+            <div className="footer-brand">
+              <Brand />
+              <span className="footer-tagline">Connecting you to a better future</span>
+            </div>
+            <div className="footer-content">
+              <nav className="footer-nav" aria-label="Footer navigation">
+                {navigationItems.map((item) => (
+                  <Link key={item.href} href={item.href}>{item.label}</Link>
+                ))}
+              </nav>
               <div className="footer-details">
                 <span className="footer-detail-label">SERVICES · WHATSAPP · PHONE · KENYA</span>
                 <span>{emailAddresses[0]} · {emailAddresses[1]}</span>
                 <span>© 2026 NutterX Technologies. All rights reserved.</span>
                 <span>NutterX Connect WiFi is a product of NutterX Technologies.</span>
               </div>
-            </footer>
-          </div>
-        </section>
-      </main>
+            </div>
+          </footer>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 kind = "web"
 previewPath = "/"
 title = "NutterX Technologies"
-description = "A premium single-page website for NutterX Technologies, a Kenya-based technology company offering web development, WhatsApp automation, WiFi connectivity, system solutions, and digital marketing services."
+description = "A responsive multi-page website for NutterX Technologies, a Kenya-based technology company offering web development, WhatsApp automation, WiFi connectivity, and system solutions."
 version = "1.0.0"
 id = "artifacts/nutterx-technologies"
 router = "path"
