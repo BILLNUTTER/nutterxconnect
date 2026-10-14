@@ -8,9 +8,12 @@ import {
   Code2,
   Mail,
   Menu,
+  Megaphone,
   MessageCircle,
+  MessagesSquare,
   Phone,
   Settings2,
+  UsersRound,
   Wifi,
   X,
 } from 'lucide-react';
@@ -302,6 +305,55 @@ function AppContent() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        <section className="new-app-section" aria-labelledby="new-app-title">
+          <div className="container">
+            <Reveal className="new-app-card">
+              <div className="new-app-copy">
+                <span className="new-app-badge"><i aria-hidden="true" /> NEW</span>
+                <span className="eyebrow">Meet. Share. Chat.</span>
+                <h2 id="new-app-title">A new way to <span>connect.</span></h2>
+                <p>
+                  Explore a WhatsApp-style web app where you can find new friends,
+                  advertise your products, and vibe chat—all in one place.
+                </p>
+                <button
+                  className="button new-app-button"
+                  type="button"
+                  onClick={() => openWhatsApp('Hello NutterX Technologies, I would like to know more about the new WhatsApp-style web app.')}
+                >
+                  Ask about the app <ArrowUpRight size={16} />
+                </button>
+              </div>
+              <div className="new-app-features" aria-label="What you can do in the new web app">
+                <div className="new-app-feature">
+                  <span className="new-app-feature-icon"><UsersRound size={20} /></span>
+                  <div>
+                    <span className="new-app-feature-label">01 / CONNECT</span>
+                    <h3>Find new friends</h3>
+                    <p>Meet people and make new connections.</p>
+                  </div>
+                </div>
+                <div className="new-app-feature">
+                  <span className="new-app-feature-icon"><Megaphone size={20} /></span>
+                  <div>
+                    <span className="new-app-feature-label">02 / PROMOTE</span>
+                    <h3>Advertise products</h3>
+                    <p>Showcase what you sell to the community.</p>
+                  </div>
+                </div>
+                <div className="new-app-feature">
+                  <span className="new-app-feature-icon"><MessagesSquare size={20} /></span>
+                  <div>
+                    <span className="new-app-feature-label">03 / CHAT</span>
+                    <h3>Vibe chat</h3>
+                    <p>Join conversations and enjoy the chat.</p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </section>
 
