@@ -91,16 +91,16 @@ const serviceItems = [
   },
 ];
 
-const navigationItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'Social App', href: '/community-app' },
-  { label: 'WhatsApp Bot', href: '/whatsapp-bot' },
-  { label: 'WiFi', href: '/wifi' },
-  { label: 'About', href: '/about' },
-  { label: 'How It Works', href: '/how-it-works' },
-  { label: 'Why Us', href: '/why-us' },
-  { label: 'Contact', href: '/contact' },
+const navigationItems: { label: string; href: string; description: string; badge?: string }[] = [
+  { label: 'Home', href: '/', description: 'Start with a quick introduction to NutterX.' },
+  { label: 'Services', href: '/services', description: 'Websites, WhatsApp bots, WiFi, and tailored systems.' },
+  { label: 'Social App', href: '/community-app', description: 'Find friends, promote products, and vibe chat.', badge: 'NEW' },
+  { label: 'WhatsApp Bot', href: '/whatsapp-bot', description: 'Explore WhatsApp automation from KSh 70 per month.' },
+  { label: 'WiFi', href: '/wifi', description: 'Compare hotspot and home internet packages.' },
+  { label: 'About', href: '/about', description: 'Learn about NutterX and the people we serve.' },
+  { label: 'How It Works', href: '/how-it-works', description: 'See the steps from first message to solution.' },
+  { label: 'Why Us', href: '/why-us', description: 'What to expect from NutterX support and service.' },
+  { label: 'Contact', href: '/contact', description: 'Reach us by WhatsApp, phone, email, or social media.' },
 ];
 
 const pageMetadata: Record<string, { title: string; description: string }> = {
@@ -207,6 +207,88 @@ function Brand({ onClick }: { onClick?: () => void }) {
   );
 }
 
+function PageDirectory({ currentRoute }: { currentRoute: string }) {
+  const pages = navigationItems.filter((item) => item.href !== '/');
+
+  return (
+    <section className="page-directory" id="pages" aria-labelledby="page-directory-title">
+      <div className="container">
+        <div className="page-directory-header">
+          <div>
+            <span className="eyebrow">Choose a page</span>
+            <h2 id="page-directory-title">Find the page you need.</h2>
+          </div>
+          <p>Each page covers one part of NutterX. Pick a topic to see its details and next step.</p>
+        </div>
+        <div className="page-directory-grid">
+          {pages.map((item, index) => {
+            const pageId = item.href.slice(1).replace(/\//g, '-') || 'home';
+            return (
+              <Link
+                className="page-directory-card"
+                key={item.href}
+                href={item.href}
+                aria-current={currentRoute === item.href ? 'page' : undefined}
+                data-testid={`page-directory-${pageId}`}
+              >
+                <div className="page-directory-card-top">
+                  <span className="page-directory-index">{String(index + 1).padStart(2, '0')}</span>
+                  {item.badge && <span className="page-directory-badge">{item.badge}</span>}
+                </div>
+                <div>
+                  <h3>{item.label}</h3>
+                  <p>{item.description}</p>
+                </div>
+                <ArrowUpRight className="page-directory-arrow" size={17} aria-hidden="true" />
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PageEnd({ currentRoute }: { currentRoute: string }) {
+  const otherPages = navigationItems.filter((item) => item.href !== currentRoute);
+  const isContactPage = currentRoute === '/contact';
+
+  return (
+    <section className="page-end-section" aria-labelledby="page-end-title">
+      <div className="container">
+        <div className="page-end-card">
+          <div>
+            <span className="eyebrow">Keep exploring</span>
+            <h2 id="page-end-title">What would you like to see next?</h2>
+            <p>Choose another page, or get in touch if you already know what you need.</p>
+          </div>
+          <Link
+            className="button button-primary"
+            href={isContactPage ? '/services' : '/contact'}
+            data-testid="page-end-primary"
+          >
+            {isContactPage ? 'Explore services' : 'Talk to NutterX'}
+            <ArrowUpRight size={16} />
+          </Link>
+        </div>
+        <nav className="page-end-links" aria-label="Explore other pages">
+          {otherPages.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={currentRoute === item.href ? 'page' : undefined}
+              data-testid={`page-end-${item.href.slice(1).replace(/\//g, '-') || 'home'}`}
+            >
+              {item.label}
+              <ArrowUpRight size={13} aria-hidden="true" />
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </section>
+  );
+}
+
 function AppContent() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [packageType, setPackageType] = useState<'hotspot' | 'family'>('hotspot');
@@ -276,6 +358,27 @@ function AppContent() {
               {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
+          <nav className="page-rail" aria-label="Browse pages">
+            <span className="page-rail-title">Pages</span>
+            <div className="page-rail-links">
+              {navigationItems.map((item) => {
+                const pageId = item.href.slice(1).replace(/\//g, '-') || 'home';
+                return (
+                  <Link
+                    className="page-rail-link"
+                    key={item.href}
+                    href={item.href}
+                    onClick={closeMenu}
+                    aria-current={currentRoute === item.href ? 'page' : undefined}
+                    data-testid={`page-rail-${pageId}`}
+                  >
+                    {item.label}
+                    {item.badge && <span className="page-rail-badge">{item.badge}</span>}
+                  </Link>
+                );
+              })}
+            </div>
+          </nav>
           {menuOpen && (
             <nav className="mobile-nav" id="site-mobile-nav" aria-label="Mobile navigation">
               {navigationItems.map((item) => (
@@ -356,11 +459,13 @@ function AppContent() {
 
              <Reveal className="hero-footer" delay={180}>
               <span className="hero-note">Web. WhatsApp. WiFi. Systems.</span>
-               <Link className="hero-scroll" href="/services">Explore our services <ArrowDown size={15} /></Link>
+                <a className="hero-scroll" href="#pages" data-testid="link-browse-pages">Browse all pages <ArrowDown size={15} /></a>
             </Reveal>
           </div>
         </section>
         )}
+
+        {currentRoute === '/' && <PageDirectory currentRoute={currentRoute} />}
 
         {currentRoute === '/services' && (
         <section className="section services" id="services">
@@ -612,6 +717,23 @@ function AppContent() {
                <span className="about-badge">BASED IN KENYA</span>
              </Reveal>
            </div>
+            <div className="container about-pillars">
+              <article className="about-pillar">
+                <span>01 / DIGITAL</span>
+                <h3>Build a clear online presence.</h3>
+                <p>Websites designed to help people understand your business and what it offers.</p>
+              </article>
+              <article className="about-pillar">
+                <span>02 / CONNECTIVITY</span>
+                <h3>Stay connected day to day.</h3>
+                <p>WiFi options for homes, families, and businesses.</p>
+              </article>
+              <article className="about-pillar">
+                <span>03 / SYSTEMS</span>
+                <h3>Make everyday work easier.</h3>
+                <p>Custom systems and WhatsApp automation shaped around practical needs.</p>
+              </article>
+            </div>
          </section>
         )}
 
@@ -699,6 +821,10 @@ function AppContent() {
               </Reveal>
             </div>
           </section>
+        )}
+
+        {currentRoute !== '/' && navigationItems.some((item) => item.href === currentRoute) && (
+          <PageEnd currentRoute={currentRoute} />
         )}
       </main>
       <div className="site-footer-shell">
