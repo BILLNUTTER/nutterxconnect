@@ -518,7 +518,7 @@ function AppContent() {
               <Reveal className="contact-actions" delay={120}>
                  <span className="contact-actions-label">DIRECT CONTACT</span>
                  <button className="contact-item contact-cta" type="button" onClick={() => openWhatsApp('Hello NutterX Technologies, I would like to enquire about your services.')}><MessageCircle size={19} /> CHAT ON WHATSAPP <span className="contact-detail">+254 713 881 613</span> <ArrowUpRight size={15} /></button>
-                 <a className="contact-item contact-cta" href={phoneHref}><Phone size={19} /> CALL US <span className="contact-detail">0758 891 491</span> <ArrowUpRight size={15} /></a>
+                 <a className="contact-item contact-cta" href={phoneHref}><Phone size={19} /> CALL US <span className="contact-detail">+254 758 891 491</span> <ArrowUpRight size={15} /></a>
                  <a className="contact-item contact-email" href={emailHref}>
                    <Mail size={19} />
                    <span><strong>EMAIL</strong><br />{emailAddresses[0]}<br />{emailAddresses[1]}</span>
