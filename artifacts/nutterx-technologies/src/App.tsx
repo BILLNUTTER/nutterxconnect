@@ -319,13 +319,12 @@ function AppContent() {
                   Explore a WhatsApp-style web app where you can find new friends,
                   advertise your products, and vibe chat—all in one place.
                 </p>
-                <button
+                <a
                   className="button new-app-button"
-                  type="button"
-                  onClick={() => openWhatsApp('Hello NutterX Technologies, I would like to know more about the new WhatsApp-style web app.')}
+                  href="https://nutterx-connect.vercel.app/"
                 >
-                  Ask about the app <ArrowUpRight size={16} />
-                </button>
+                  Open the app <ArrowUpRight size={16} />
+                </a>
               </div>
               <div className="new-app-features" aria-label="What you can do in the new web app">
                 <div className="new-app-feature">
