@@ -219,6 +219,15 @@ function AppContent() {
         </div>
       </header>
 
+      {menuOpen && (
+        <button
+          className="mobile-menu-backdrop"
+          type="button"
+          aria-label="Close navigation menu"
+          onClick={closeMenu}
+        />
+      )}
+
       <main>
         <section className="hero" id="home">
           <div className="container hero-content">
