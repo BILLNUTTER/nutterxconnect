@@ -514,7 +514,7 @@ function AppContent() {
                 </p>
                 <a
                   className="button new-app-button"
-                  href="https://nutterx-connect.vercel.app/"
+                  href="https://chatweaver-whatschat.vercel.app/"
                 >
                   Open the app <ArrowUpRight size={16} />
                 </a>
