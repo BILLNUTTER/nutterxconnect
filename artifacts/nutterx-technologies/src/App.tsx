@@ -421,7 +421,7 @@ function AppContent() {
           <div className="container hero-content">
             <Reveal className="hero-copy">
               <span className="eyebrow">A Kenya-based technology partner</span>
-              <h1>TECHNOLOGY THAT CONNECTS YOU TO A <em>BETTER FUTURE.</em></h1>
+              <h1>Technology for a more <em>connected everyday.</em></h1>
               <p className="hero-intro">
                 NutterX Technologies provides reliable digital, connectivity and technology solutions designed for individuals, homes, businesses and organizations.
               </p>
@@ -437,24 +437,12 @@ function AppContent() {
               </div>
             </Reveal>
 
-             <Reveal className="hero-signal" delay={110} ariaHidden>
-               <div className="signal-topline">
-                 <span>NUTTERX / CONNECTED</span>
-                 <span className="signal-live"><i /> LIVE</span>
-               </div>
-               <div className="signal-core">
-                 <span className="signal-ring ring-one" />
-                 <span className="signal-ring ring-two" />
-                 <span className="signal-node node-top">WEB</span>
-                 <span className="signal-node node-right">BOT</span>
-                 <span className="signal-node node-bottom">WIFI</span>
-                 <span className="signal-node node-left">SYSTEMS</span>
-                 <span className="signal-center">NX</span>
-               </div>
-               <div className="signal-foot">
-                 <span>FOUR WAYS TO MOVE FORWARD</span>
-                 <span>01 — 04</span>
-               </div>
+             <Reveal className="hero-service-index" delay={110}>
+               <span className="hero-index-label">What we can help with</span>
+               <Link href="/services"><span className="hero-index-number">01</span><span>Web development</span><ArrowUpRight size={15} /></Link>
+               <Link href="/whatsapp-bot"><span className="hero-index-number">02</span><span>WhatsApp bots</span><ArrowUpRight size={15} /></Link>
+               <Link href="/wifi"><span className="hero-index-number">03</span><span>WiFi packages</span><ArrowUpRight size={15} /></Link>
+               <Link href="/services"><span className="hero-index-number">04</span><span>Custom systems</span><ArrowUpRight size={15} /></Link>
              </Reveal>
 
              <Reveal className="hero-footer" delay={180}>
@@ -555,8 +543,8 @@ function AppContent() {
           <div className="container">
             <Reveal className="bot-card">
               <div className="bot-content">
-                <span className="eyebrow">AUTOMATE. ENGAGE. GROW.</span>
-                <h2>POWERFUL WHATSAPP BOTS. JUST KSH 70/MONTH.</h2>
+                <span className="eyebrow">WhatsApp automation</span>
+                <h2>WhatsApp bots from KSh 70 a month.</h2>
                 <p>Get your WhatsApp Bot up and running and take your communication and business automation to the next level.</p>
                 <button
                   className="button button-light"
@@ -588,7 +576,7 @@ function AppContent() {
             <div className="wifi-layout">
               <Reveal className="wifi-heading">
                 <span className="eyebrow">NutterX Connect</span>
-                <h2>FAST. SECURE. <span>STABLE. AFFORDABLE.</span></h2>
+                <h2>WiFi for <span>homes and businesses.</span></h2>
                 <p>Stay connected with reliable internet solutions for homes, families and businesses.</p>
                 <ul className="wifi-features">
                   <li><Check size={15} /> Fast Internet</li>
@@ -664,20 +652,17 @@ function AppContent() {
           <div className="container why-grid">
              <Reveal className="why-art">
                <div className="why-art-frame">
-                 <img
-                   className="why-logo"
-                   src="/nutterx-why-choose.png"
-                   alt="NutterX Technologies logo"
-                 />
-                 <span className="why-contact-pill">
-                   <Phone size={16} aria-hidden="true" />
-                   +254 758 891 491
-                 </span>
+                 <span className="why-art-kicker">NutterX / Kenya</span>
+                 <div className="why-art-title">Good tech.<br /><span>For real life.</span></div>
+                 <div className="why-art-mark">
+                   <span className="brand-logo-crop" aria-hidden="true"><img src="/nutterx-logo.png" alt="" /></span>
+                   Practical technology, made approachable
+                 </div>
                </div>
             </Reveal>
             <Reveal className="why-copy" delay={110}>
               <span className="eyebrow">Why NutterX</span>
-               <h2 className="section-heading">WHY CHOOSE <span>NUTTERX?</span></h2>
+               <h2 className="section-heading">Why choose <span>NutterX?</span></h2>
               <div className="why-list">
                 <div className="why-item">
                   <span className="why-item-index">01</span>
@@ -774,7 +759,7 @@ function AppContent() {
             <div className="contact-grid">
               <Reveal>
                 <span className="eyebrow">Let&apos;s connect</span>
-                 <h2>LET&apos;S BUILD SOMETHING BETTER.</h2>
+                <h2>Let&apos;s talk about what you need.</h2>
                  <p className="contact-intro">Have a project, need reliable WiFi, or want to automate your business with a WhatsApp bot? Talk to us today.</p>
                  <div className="social-links" aria-label="NutterX Technologies social media profiles">
                    <span className="social-links-label">Follow NutterX</span>
