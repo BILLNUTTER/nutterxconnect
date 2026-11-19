@@ -2,7 +2,6 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Link, useLocation } from 'wouter';
 import {
-  ArrowDown,
   ArrowUpRight,
   Check,
   ChevronRight,
@@ -91,16 +90,16 @@ const serviceItems = [
   },
 ];
 
-const navigationItems: { label: string; href: string; description: string; badge?: string }[] = [
-  { label: 'Home', href: '/', description: 'Start with a quick introduction to NutterX.' },
-  { label: 'Services', href: '/services', description: 'Websites, WhatsApp bots, WiFi, and tailored systems.' },
-  { label: 'Social App', href: '/community-app', description: 'Find friends, promote products, and vibe chat.', badge: 'NEW' },
-  { label: 'WhatsApp Bot', href: '/whatsapp-bot', description: 'Explore WhatsApp automation from KSh 70 per month.' },
-  { label: 'WiFi', href: '/wifi', description: 'Compare hotspot and home internet packages.' },
-  { label: 'About', href: '/about', description: 'Learn about NutterX and the people we serve.' },
-  { label: 'How It Works', href: '/how-it-works', description: 'See the steps from first message to solution.' },
-  { label: 'Why Us', href: '/why-us', description: 'What to expect from NutterX support and service.' },
-  { label: 'Contact', href: '/contact', description: 'Reach us by WhatsApp, phone, email, or social media.' },
+const navigationItems: { label: string; href: string; badge?: string }[] = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Social App', href: '/community-app', badge: 'NEW' },
+  { label: 'WhatsApp Bot', href: '/whatsapp-bot' },
+  { label: 'WiFi', href: '/wifi' },
+  { label: 'About', href: '/about' },
+  { label: 'How It Works', href: '/how-it-works' },
+  { label: 'Why Us', href: '/why-us' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const pageMetadata: Record<string, { title: string; description: string }> = {
@@ -207,88 +206,6 @@ function Brand({ onClick }: { onClick?: () => void }) {
   );
 }
 
-function PageDirectory({ currentRoute }: { currentRoute: string }) {
-  const pages = navigationItems.filter((item) => item.href !== '/');
-
-  return (
-    <section className="page-directory" id="pages" aria-labelledby="page-directory-title">
-      <div className="container">
-        <div className="page-directory-header">
-          <div>
-            <span className="eyebrow">Choose a page</span>
-            <h2 id="page-directory-title">Find the page you need.</h2>
-          </div>
-          <p>Each page covers one part of NutterX. Pick a topic to see its details and next step.</p>
-        </div>
-        <div className="page-directory-grid">
-          {pages.map((item, index) => {
-            const pageId = item.href.slice(1).replace(/\//g, '-') || 'home';
-            return (
-              <Link
-                className="page-directory-card"
-                key={item.href}
-                href={item.href}
-                aria-current={currentRoute === item.href ? 'page' : undefined}
-                data-testid={`page-directory-${pageId}`}
-              >
-                <div className="page-directory-card-top">
-                  <span className="page-directory-index">{String(index + 1).padStart(2, '0')}</span>
-                  {item.badge && <span className="page-directory-badge">{item.badge}</span>}
-                </div>
-                <div>
-                  <h3>{item.label}</h3>
-                  <p>{item.description}</p>
-                </div>
-                <ArrowUpRight className="page-directory-arrow" size={17} aria-hidden="true" />
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PageEnd({ currentRoute }: { currentRoute: string }) {
-  const otherPages = navigationItems.filter((item) => item.href !== currentRoute);
-  const isContactPage = currentRoute === '/contact';
-
-  return (
-    <section className="page-end-section" aria-labelledby="page-end-title">
-      <div className="container">
-        <div className="page-end-card">
-          <div>
-            <span className="eyebrow">Keep exploring</span>
-            <h2 id="page-end-title">What would you like to see next?</h2>
-            <p>Choose another page, or get in touch if you already know what you need.</p>
-          </div>
-          <Link
-            className="button button-primary"
-            href={isContactPage ? '/services' : '/contact'}
-            data-testid="page-end-primary"
-          >
-            {isContactPage ? 'Explore services' : 'Talk to NutterX'}
-            <ArrowUpRight size={16} />
-          </Link>
-        </div>
-        <nav className="page-end-links" aria-label="Explore other pages">
-          {otherPages.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={currentRoute === item.href ? 'page' : undefined}
-              data-testid={`page-end-${item.href.slice(1).replace(/\//g, '-') || 'home'}`}
-            >
-              {item.label}
-              <ArrowUpRight size={13} aria-hidden="true" />
-            </Link>
-          ))}
-        </nav>
-      </div>
-    </section>
-  );
-}
-
 function AppContent() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [packageType, setPackageType] = useState<'hotspot' | 'family'>('hotspot');
@@ -337,6 +254,7 @@ function AppContent() {
                   aria-current={currentRoute === item.href ? 'page' : undefined}
                 >
                   {item.label}
+                  {item.badge && <span className="nav-link-badge">{item.badge}</span>}
                 </Link>
               ))}
             </nav>
@@ -358,27 +276,6 @@ function AppContent() {
               {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
-          <nav className="page-rail" aria-label="Browse pages">
-            <span className="page-rail-title">Pages</span>
-            <div className="page-rail-links">
-              {navigationItems.map((item) => {
-                const pageId = item.href.slice(1).replace(/\//g, '-') || 'home';
-                return (
-                  <Link
-                    className="page-rail-link"
-                    key={item.href}
-                    href={item.href}
-                    onClick={closeMenu}
-                    aria-current={currentRoute === item.href ? 'page' : undefined}
-                    data-testid={`page-rail-${pageId}`}
-                  >
-                    {item.label}
-                    {item.badge && <span className="page-rail-badge">{item.badge}</span>}
-                  </Link>
-                );
-              })}
-            </div>
-          </nav>
           {menuOpen && (
             <nav className="mobile-nav" id="site-mobile-nav" aria-label="Mobile navigation">
               {navigationItems.map((item) => (
@@ -389,6 +286,7 @@ function AppContent() {
                   aria-current={currentRoute === item.href ? 'page' : undefined}
                 >
                   {item.label}
+                  {item.badge && <span className="nav-link-badge">{item.badge}</span>}
                 </Link>
               ))}
               <button
@@ -421,9 +319,9 @@ function AppContent() {
           <div className="container hero-content">
             <Reveal className="hero-copy">
               <span className="eyebrow">A Kenya-based technology partner</span>
-              <h1>Technology for a more <em>connected everyday.</em></h1>
+              <h1>Technology services for <em>homes and businesses.</em></h1>
               <p className="hero-intro">
-                NutterX Technologies provides reliable digital, connectivity and technology solutions designed for individuals, homes, businesses and organizations.
+                NutterX Technologies provides web development, WhatsApp automation, WiFi, and custom systems in Kenya.
               </p>
               <div className="hero-actions">
                 <button
@@ -437,23 +335,16 @@ function AppContent() {
               </div>
             </Reveal>
 
-             <Reveal className="hero-service-index" delay={110}>
-               <span className="hero-index-label">What we can help with</span>
-               <Link href="/services"><span className="hero-index-number">01</span><span>Web development</span><ArrowUpRight size={15} /></Link>
-               <Link href="/whatsapp-bot"><span className="hero-index-number">02</span><span>WhatsApp bots</span><ArrowUpRight size={15} /></Link>
-               <Link href="/wifi"><span className="hero-index-number">03</span><span>WiFi packages</span><ArrowUpRight size={15} /></Link>
-               <Link href="/services"><span className="hero-index-number">04</span><span>Custom systems</span><ArrowUpRight size={15} /></Link>
+             <Reveal className="hero-service-index" delay={110} ariaHidden={false}>
+               <span className="hero-index-label">Services</span>
+               <div className="hero-service-item"><span className="hero-index-number">01</span><span>Web development</span></div>
+               <div className="hero-service-item"><span className="hero-index-number">02</span><span>WhatsApp bots</span></div>
+               <div className="hero-service-item"><span className="hero-index-number">03</span><span>WiFi packages</span></div>
+               <div className="hero-service-item"><span className="hero-index-number">04</span><span>Custom systems</span></div>
              </Reveal>
-
-             <Reveal className="hero-footer" delay={180}>
-              <span className="hero-note">Web. WhatsApp. WiFi. Systems.</span>
-                <a className="hero-scroll" href="#pages" data-testid="link-browse-pages">Browse all pages <ArrowDown size={15} /></a>
-            </Reveal>
           </div>
         </section>
         )}
-
-        {currentRoute === '/' && <PageDirectory currentRoute={currentRoute} />}
 
         {currentRoute === '/services' && (
         <section className="section services" id="services">
@@ -461,7 +352,7 @@ function AppContent() {
             <Reveal className="section-header">
               <div>
                 <span className="eyebrow">What we do</span>
-                <h2 className="section-heading">Useful technology.<br /><span>Less complication.</span></h2>
+                <h2 className="section-heading">Technology services for <span>homes and businesses.</span></h2>
               </div>
               <p className="section-description">The right digital tool should make the next step clearer. That is where we start.</p>
             </Reveal>
@@ -740,13 +631,13 @@ function AppContent() {
               </Reveal>
               <Reveal className="process-item" delay={160}>
                 <span className="process-item-number">02</span>
-                <h3>Find the right fit</h3>
-                <p>We focus the conversation around a useful solution.</p>
+                  <h3>Discuss your options</h3>
+                  <p>We explain the services that best match your needs.</p>
               </Reveal>
               <Reveal className="process-item" delay={240}>
                 <span className="process-item-number">03</span>
-                <h3>Connect to better</h3>
-                <p>Move ahead with technology that does its job.</p>
+                  <h3>Get started</h3>
+                  <p>Choose the service that works for you and we will help with the next steps.</p>
               </Reveal>
             </div>
           </div>
@@ -808,23 +699,15 @@ function AppContent() {
           </section>
         )}
 
-        {currentRoute !== '/' && navigationItems.some((item) => item.href === currentRoute) && (
-          <PageEnd currentRoute={currentRoute} />
-        )}
       </main>
       <div className="site-footer-shell">
         <div className="container">
           <footer className="footer">
             <div className="footer-brand">
               <Brand />
-              <span className="footer-tagline">Connecting you to a better future</span>
+              <span className="footer-tagline">Technology services in Kenya</span>
             </div>
             <div className="footer-content">
-              <nav className="footer-nav" aria-label="Footer navigation">
-                {navigationItems.map((item) => (
-                  <Link key={item.href} href={item.href}>{item.label}</Link>
-                ))}
-              </nav>
               <div className="footer-details">
                 <span className="footer-detail-label">SERVICES · WHATSAPP · PHONE · KENYA</span>
                 <span>{emailAddresses[0]} · {emailAddresses[1]}</span>
