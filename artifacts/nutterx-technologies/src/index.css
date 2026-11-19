@@ -186,7 +186,6 @@ section[id] { scroll-margin-top:88px; }
   border:1px solid var(--line); border-radius:9px; background:var(--paper-light);
   transition:transform .26s ease,border-color .26s ease,background-color .26s ease;
 }
-.service-card:nth-child(4) { grid-column:span 12; min-height:230px; }
 .service-card:hover { transform:translateY(-4px); border-color:#df8d62; }
 .service-card::after { position:absolute; right:-49px; bottom:-78px; width:180px; height:180px; border:1px solid rgba(32,35,42,.12); border-radius:50%; content:''; }
 .service-number { color:#898983; font:10px var(--app-font-mono); }
@@ -392,7 +391,7 @@ section[id] { scroll-margin-top:88px; }
   .hero-service-item { min-height:49px; font-size:13px; }
   .section { padding:65px 0; }
   .section-heading { font-size:clamp(2.4rem,11vw,3.8rem); }
-  .service-card,.service-card:nth-child(4) { grid-column:span 12; min-height:250px; }
+  .service-card { grid-column:span 12; min-height:250px; }
   .service-icon { margin-top:23px; }
   .bot-content { padding:31px 24px 15px; }
   .bot-content h2 { font-size:clamp(2.8rem,12vw,4rem); }
