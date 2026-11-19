@@ -172,6 +172,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #f08a50; outline-offs
 .hero-service-item { display:grid; grid-template-columns:34px 1fr; align-items:center; gap:8px; min-height:54px; border-top:1px solid rgba(255,255,255,.16); color:#f5f1e9; font:500 14px 'Space Grotesk',sans-serif; }
 .hero-index-number { color:#aeadab; font:10px var(--app-font-mono); }
 
+section[id] { scroll-margin-top:88px; }
 .section { padding: 100px 0; }
 .section-header { display:flex; align-items:end; justify-content:space-between; gap:32px; margin-bottom:44px; }
 .section-heading { max-width:720px; margin:16px 0 0; font:600 clamp(2.5rem,5.3vw,5rem)/.98 'Space Grotesk',sans-serif; letter-spacing:-.075em; }
@@ -354,6 +355,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #f08a50; outline-offs
   .mobile-nav a[aria-current="page"] { color:var(--orange-dark); }
   .mobile-nav .button { width:100%; margin-top:4px; }
   .hero { min-height:0; padding:72px 0 32px; }
+  section[id] { scroll-margin-top:76px; }
   .hero-content { grid-template-columns:minmax(0,1fr); gap:35px; }
   .hero-copy { max-width:680px; }
   .hero h1 { max-width:680px; font-size:clamp(3rem,7.2vw,4.6rem); }
