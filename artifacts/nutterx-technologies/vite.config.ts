@@ -30,7 +30,7 @@ export default defineConfig({
         const publicDir = path.resolve(import.meta.dirname, 'public');
         const outputDir = path.resolve(import.meta.dirname, 'dist/public');
 
-        for (const fileName of ['robots.txt', 'sitemap.xml']) {
+        for (const fileName of ['robots.txt', 'sitemap.xml', 'llms.txt']) {
           const source = readFileSync(path.join(publicDir, fileName), 'utf8');
           writeFileSync(
             path.join(outputDir, fileName),

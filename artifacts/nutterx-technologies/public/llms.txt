@@ -1,0 +1,35 @@
+# NutterX Technologies
+
+> NutterX Technologies is a Kenya-based technology provider for homes and businesses.
+
+## Website
+
+- Main website: __SITE_URL__/
+- Social App: https://chatweaver-whatschat.vercel.app/
+
+## Services
+
+- Web development: responsive websites tailored to business needs.
+- WhatsApp bot deployment: business communication and automation, from KSh 70 per month.
+- WiFi solutions: hotspot packages and home internet packages.
+- Custom systems: software and systems designed around practical needs.
+- Social App: a WhatsApp-style web app to find new friends, advertise products, and chat.
+
+## WiFi package prices
+
+Hotspot: free 3 minutes (KSh 0), 1 hour (KSh 10), 3 hours (KSh 20), 6 hours (KSh 30), 12 hours (KSh 40), 24 hours (KSh 50), 1 week (KSh 250), and 1 month (KSh 600).
+
+Home packages: 4 Mbps (KSh 800 per month) and 7 Mbps (KSh 1,000 per month).
+
+## Contact
+
+- Phone and WhatsApp: +254 758 891 491
+- WhatsApp chat: https://wa.me/254758891491
+- Email: nutterxconnect@gmail.com
+- Email: nutterxtech@gmail.com
+- Instagram: https://www.instagram.com/nutterx_?stkn=MTkwcWNya2Y0bTgzcw==
+- Facebook: https://www.facebook.com/profile.php?id=61589267831004
+- TikTok: https://www.tiktok.com/@nutter.001?_r=1&_t=ZS-99XBnc6KSBw
+- X: https://x.com/Billnutter43778
+
+NutterX Technologies serves customers in Kenya. For current availability and service details, contact the business directly.

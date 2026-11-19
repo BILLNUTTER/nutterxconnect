@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>NutterX Technologies | Technology Services in Kenya</title>
-    <meta name="description" content="NutterX Technologies provides web development, WhatsApp automation, WiFi services, and custom systems for homes and businesses in Kenya." />
+    <meta name="description" content="NutterX Technologies offers websites, WhatsApp bots, WiFi packages, and custom systems in Kenya. Contact us by WhatsApp, phone, or email for service details." />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="NutterX Technologies" />
     <meta name="theme-color" content="#20232a" />
@@ -12,7 +12,7 @@
     <meta property="og:site_name" content="NutterX Technologies" />
     <meta property="og:locale" content="en_KE" />
     <meta property="og:title" content="NutterX Technologies | Technology Services in Kenya" />
-    <meta property="og:description" content="Web development, WhatsApp automation, WiFi services, and custom systems for homes and businesses in Kenya." />
+    <meta property="og:description" content="NutterX Technologies offers websites, WhatsApp bots, WiFi packages, and custom systems in Kenya. Contact us by WhatsApp, phone, or email for service details." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="__SITE_URL__/" />
     <meta property="og:image" content="__SITE_URL__/nutterx-social-share.png" />
@@ -23,7 +23,8 @@
     <meta property="og:image:alt" content="NutterX Technologies — technology, connectivity and WiFi solutions in Kenya." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="NutterX Technologies | Technology Services in Kenya" />
-    <meta name="twitter:description" content="Web development, WhatsApp automation, WiFi services, and custom systems for homes and businesses in Kenya." />
+    <meta name="twitter:description" content="NutterX Technologies offers websites, WhatsApp bots, WiFi packages, and custom systems in Kenya. Contact us by WhatsApp, phone, or email for service details." />
+    <meta name="twitter:site" content="@Billnutter43778" />
     <meta name="twitter:image" content="__SITE_URL__/nutterx-social-share.png" />
     <meta name="twitter:image:alt" content="NutterX Technologies — technology, connectivity and WiFi solutions in Kenya." />
     <link rel="icon" type="image/png" href="/nutterx-logo.png" />
@@ -33,29 +34,107 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "NutterX Technologies",
-        "url": "__SITE_URL__/",
-        "logo": "__SITE_URL__/nutterx-logo.png",
-        "image": "__SITE_URL__/nutterx-social-share.png",
-        "description": "Technology, connectivity and WiFi solutions for people and businesses in Kenya.",
-        "telephone": "+254758891491",
-        "areaServed": {
-          "@type": "Country",
-          "name": "Kenya"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+254758891491",
-          "contactType": "customer service",
-          "areaServed": "KE",
-          "availableLanguage": "en"
-        },
-        "knowsAbout": [
-          "Web development",
-          "WhatsApp automation",
-          "WiFi connectivity",
-          "System solutions"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "__SITE_URL__/#website",
+            "url": "__SITE_URL__/",
+            "name": "NutterX Technologies",
+            "description": "Technology services for homes and businesses in Kenya.",
+            "inLanguage": "en-KE",
+            "publisher": { "@id": "__SITE_URL__/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "__SITE_URL__/#organization",
+            "name": "NutterX Technologies",
+            "url": "__SITE_URL__/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "__SITE_URL__/nutterx-logo.png"
+            },
+            "image": "__SITE_URL__/nutterx-social-share.png",
+            "description": "NutterX Technologies provides web development, WhatsApp automation, WiFi services, and custom systems for homes and businesses in Kenya.",
+            "telephone": "+254758891491",
+            "email": ["nutterxconnect@gmail.com", "nutterxtech@gmail.com"],
+            "areaServed": {
+              "@type": "Country",
+              "name": "Kenya"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+254758891491",
+              "email": ["nutterxconnect@gmail.com", "nutterxtech@gmail.com"],
+              "contactType": "customer service",
+              "areaServed": "KE",
+              "availableLanguage": "English"
+            },
+            "sameAs": [
+              "https://www.instagram.com/nutterx_?stkn=MTkwcWNya2Y0bTgzcw==",
+              "https://www.facebook.com/profile.php?id=61589267831004",
+              "https://www.tiktok.com/@nutter.001?_r=1&_t=ZS-99XBnc6KSBw",
+              "https://x.com/Billnutter43778"
+            ],
+            "knowsAbout": [
+              "Website design and development",
+              "WhatsApp bot deployment and automation",
+              "WiFi and internet connectivity",
+              "Custom software and system solutions",
+              "Online community and social chat applications"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "NutterX Technology Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Web Development",
+                    "description": "Responsive websites tailored to business needs.",
+                    "url": "__SITE_URL__/#services"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "WhatsApp Bot Deployment",
+                    "description": "WhatsApp bots for business communication and automation.",
+                    "url": "__SITE_URL__/#bot"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "WiFi Solutions",
+                    "description": "Internet packages for homes and businesses in Kenya.",
+                    "url": "__SITE_URL__/#wifi"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Custom System Solutions",
+                    "description": "Software and systems designed around practical business needs.",
+                    "url": "__SITE_URL__/#services"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "__SITE_URL__/#social-app",
+            "name": "NutterX Social App",
+            "url": "https://chatweaver-whatschat.vercel.app/",
+            "applicationCategory": "SocialNetworkingApplication",
+            "operatingSystem": "Web",
+            "description": "A WhatsApp-style web app for finding new friends, advertising products, and chatting.",
+            "publisher": { "@id": "__SITE_URL__/#organization" }
+          }
         ]
       }
     </script>
