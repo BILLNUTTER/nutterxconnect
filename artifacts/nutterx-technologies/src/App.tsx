@@ -282,13 +282,16 @@ function AppContent() {
               </div>
             </Reveal>
 
-             <Reveal className="hero-service-index" delay={110} ariaHidden={false}>
-               <span className="hero-index-label">Services</span>
-               <div className="hero-service-item"><span className="hero-index-number">01</span><span>Web development</span></div>
-               <div className="hero-service-item"><span className="hero-index-number">02</span><span>WhatsApp bots</span></div>
-               <div className="hero-service-item"><span className="hero-index-number">03</span><span>WiFi packages</span></div>
-               <div className="hero-service-item"><span className="hero-index-number">04</span><span>Custom systems</span></div>
-             </Reveal>
+            <Reveal className="hero-art" delay={110} ariaHidden={false}>
+              <div className="brand-art-frame">
+                <span className="brand-art-kicker">NutterX / Kenya</span>
+                <div className="brand-art-title">Good tech.<br /><span>For real life.</span></div>
+                <div className="brand-art-mark">
+                  <span className="brand-logo-crop" aria-hidden="true"><img src="/nutterx-logo.png" alt="" /></span>
+                  Practical technology, made approachable
+                </div>
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -478,17 +481,7 @@ function AppContent() {
 
         <section className="section why-section" id="why-us">
           <div className="container why-grid">
-             <Reveal className="why-art">
-               <div className="why-art-frame">
-                 <span className="why-art-kicker">NutterX / Kenya</span>
-                 <div className="why-art-title">Good tech.<br /><span>For real life.</span></div>
-                 <div className="why-art-mark">
-                   <span className="brand-logo-crop" aria-hidden="true"><img src="/nutterx-logo.png" alt="" /></span>
-                   Practical technology, made approachable
-                 </div>
-               </div>
-            </Reveal>
-            <Reveal className="why-copy" delay={110}>
+            <Reveal className="why-copy">
               <span className="eyebrow">Why NutterX</span>
                <h2 className="section-heading">Why choose <span>NutterX?</span></h2>
               <div className="why-list">
