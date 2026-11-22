@@ -5,11 +5,13 @@
 ## Website
 
 - Main website: __SITE_URL__/
+- NutterX AI: https://nutterx-ai.vercel.app/
 - Social App: https://chatweaver-whatschat.vercel.app/
 
 ## Services
 
 - Web development: responsive websites tailored to business needs.
+- NutterX AI: a free-to-start AI companion for brainstorming, writing, learning, and exploring ideas, with fast, context-aware responses and private chats.
 - WhatsApp bot deployment: business communication and automation, from KSh 70 per month.
 - WiFi solutions: hotspot packages and home internet packages.
 - Custom systems: software and systems designed around practical needs.

@@ -192,6 +192,7 @@ section[id] { scroll-margin-top:88px; }
   border:1px solid var(--line); border-radius:9px; background:var(--paper-light);
   transition:transform .26s ease,border-color .26s ease,background-color .26s ease;
 }
+.service-card-featured { grid-column:4 / span 6; border-color:#d6a488; }
 .service-card:hover { transform:translateY(-4px); border-color:#df8d62; }
 .service-card::after { position:absolute; right:-49px; bottom:-78px; width:180px; height:180px; border:1px solid rgba(32,35,42,.12); border-radius:50%; content:''; }
 .service-number { color:#898983; font:10px var(--app-font-mono); }

@@ -12,6 +12,7 @@ import {
   MessagesSquare,
   Phone,
   Settings2,
+  Sparkles,
   UsersRound,
   Wifi,
   X,
@@ -86,6 +87,15 @@ const serviceItems = [
     audience: 'Practical systems',
     destination: '#contact',
     icon: Settings2,
+  },
+  {
+    number: '05',
+    title: 'NutterX AI',
+    text: 'An AI companion to brainstorm, write, learn, and explore ideas with fast, context-aware responses. Start free, with private chats.',
+    cta: 'Try NutterX AI',
+    audience: 'AI companion',
+    destination: 'https://nutterx-ai.vercel.app/',
+    icon: Sparkles,
   },
 ];
 
@@ -300,7 +310,7 @@ function AppContent() {
             <Reveal className="section-header">
               <div>
                 <span className="eyebrow">What we do</span>
-                <h2 className="section-heading">Web, WhatsApp, WiFi, and <span>custom systems.</span></h2>
+                <h2 className="section-heading">AI, web, WhatsApp, WiFi, and <span>custom systems.</span></h2>
               </div>
               <p className="section-description">The right digital tool should make the next step clearer. That is where we start.</p>
             </Reveal>
@@ -308,7 +318,11 @@ function AppContent() {
               {serviceItems.map((service, index) => {
                 const Icon = service.icon;
                 return (
-                  <Reveal key={service.number} className="service-card" delay={index * 90}>
+                  <Reveal
+                    key={service.number}
+                    className={`service-card${service.number === '05' ? ' service-card-featured' : ''}`}
+                    delay={index * 90}
+                  >
                     <div>
                       <span className="service-number">{service.number} / {String(serviceItems.length).padStart(2, '0')}</span>
                       <div className="service-icon"><Icon size={22} strokeWidth={1.7} /></div>
